@@ -1,0 +1,32 @@
+<header>
+  <h1>Ingrese la información del esquema que desea crear</h1>
+</header>
+<form [formGroup]="formGroup">
+  <acl-input label="Collection" left-icon="workspaces" placeholder="cars">
+  </acl-input>
+  <acl-input label="Display" left-icon="dvr" placeholder="cars"> </acl-input>
+  <acl-input label="Type" left-icon="switch_account" placeholder="entity">
+  </acl-input>
+  <acl-input
+    label="Representation"
+    left-icon="insert_emoticon"
+    placeholder="entity"
+  >
+  </acl-input>
+  <acl-input label="Definition" left-icon="support_agent" placeholder="entity">
+  </acl-input>
+  <acl-input
+    label="Presentation"
+    left-icon="support_agent"
+    placeholder="entity"
+  >
+  </acl-input>
+  <acl-select
+    label="Sergio"
+    [items]="dataFunction()"
+    left-icon="support_agent"
+    placeholder="entity"
+  >
+  </acl-select>
+</form>
+<acl-button>Crear esquema</acl-button>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ResponseModel } from '../../../models/response.model';
-import { SchemaModel } from '../../../models/schema.model';
+import { IEntitySchemaModel } from '../../../models/schema.model';
 import { SchemaService } from '../../../services/schema/schema.service';
 import { EntityListComponent } from '../entity-list/entity-list.component';
 import { SchemaDetailComponent } from '../schema-detail/schema-detail.component';
@@ -13,7 +13,8 @@ import { SchemaDetailComponent } from '../schema-detail/schema-detail.component'
   styleUrls: ['./schema-list.component.scss'],
 })
 export class SchemaListComponent implements OnInit {
-  $schemas: Observable<ResponseModel<SchemaModel[]>>;
+  static route = 'schema-list'
+  $schemas: Observable<ResponseModel<IEntitySchemaModel[]>>;
 
   constructor(private schemaService: SchemaService, private router: Router) {
     this.$schemas = this.schemaService.getSchemasTypeEntity();
