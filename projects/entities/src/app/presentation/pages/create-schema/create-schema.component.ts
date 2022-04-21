@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { IItem } from 'angular-components-library/dropdown-item';
 import { of } from 'rxjs';
 
 @Component({
@@ -24,7 +25,12 @@ export class CreateSchemaComponent implements OnInit {
   }
 
   dataFunction(){
-    return of(['hola','adios'])
+    return of([
+      {
+        display: 'jlad',
+        value: 465
+      }
+    ] as IItem[])
   }
 
   ngOnInit(): void {}

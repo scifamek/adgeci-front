@@ -2,9 +2,15 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "adgeci-core-utils": [
-        "dist/adgeci-core-utils/adgeci-core-utils",
+      "adgeci-core-utils/*": [
+        "dist/adgeci-core-utils/*",
         "dist/adgeci-core-utils"
+      ],
+      "angular-components-library/*": [
+        "../scifamek-utils/dist/angular-components-library/*"
+      ],
+      "crud-builder": [
+        "../scifamek-utils/dist/crud-builder"
       ]
     },
     "baseUrl": "./",
@@ -26,10 +32,5 @@
       "dom"
     ]
   },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+  "angularCompilerOptions": {}
 }

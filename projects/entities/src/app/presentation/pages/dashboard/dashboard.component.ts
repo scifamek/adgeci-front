@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CreateSchemaComponent } from '../create-schema/create-schema.component';
 import { SchemaListComponent } from '../schema-list/schema-list.component';
 
@@ -11,7 +11,7 @@ import { SchemaListComponent } from '../schema-list/schema-list.component';
 export class DashboardComponent implements OnInit {
   static route = 'dashboard';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   navigateTo(routeName: string) {
     const routes: any = {
@@ -19,7 +19,9 @@ export class DashboardComponent implements OnInit {
       createSchema: CreateSchemaComponent.route,
     };
     const route: string = routes[routeName];
-    this.router.navigate([route]);
+    this.router.navigate([route],{
+      relativeTo: this.route
+    });
   }
   ngOnInit(): void {}
 }

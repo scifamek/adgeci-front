@@ -6,9 +6,7 @@ import { ResponseModel, IModuleModel  } from 'adgeci-core-utils/models';
 import { IEntitySchemaModel } from '../../models/schema.model';
 import { SERVER_HOST } from '../../injection.tokens';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class EntityService {
   constructor(
     private client: HttpClient,

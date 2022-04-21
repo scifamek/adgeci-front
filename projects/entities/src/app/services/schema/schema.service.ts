@@ -6,9 +6,7 @@ import { ResponseModel } from 'adgeci-core-utils/models';
 import { SERVER_HOST } from '../../injection.tokens';
 import { IEntitySchemaModel } from '../../models/schema.model';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SchemaService {
   constructor(
     private client: HttpClient,

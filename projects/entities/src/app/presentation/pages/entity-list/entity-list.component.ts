@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { EntityService } from '../../../services/entity/entity.service';
 import { SchemaService } from '../../../services/schema/schema.service';
 
+
 @Component({
   selector: 'app-entity-list',
   templateUrl: './entity-list.component.html',

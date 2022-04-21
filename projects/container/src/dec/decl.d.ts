@@ -1,1 +1,2 @@
-declare module 'entities/Module';
+declare module 'entities/EntitiesModule';
+declare module 'payments/PaymentsModule';

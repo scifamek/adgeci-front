@@ -21,23 +21,20 @@ module.exports = {
       ...sharedMappings.getAliases(),
     },
   },
+  experiments: {
+    outputModule: true,
+  },
   plugins: [
     new ModuleFederationPlugin({
       // For remotes (please adjust)
+      library: { type: "module" },
+
       // name: "container",
       // filename: "remoteEntry.js",
-      // exposes: {
-      //     './Component': './projects/container/src/app/app.component.ts',
-      // },
-
-      // For hosts (please adjust)
-      // remotes: {
-      //     "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
-
-      // },
 
       remotes: {
-        entities: "entities@http://localhost:4201/remoteEntry.js",
+        entities: "http://localhost:4501/remoteEntry.js",
+        payments: "http://localhost:4502/remoteEntry.js",
       },
 
       shared: share({
@@ -60,6 +57,12 @@ module.exports = {
           singleton: true,
           strictVersion: true,
           requiredVersion: "auto",
+        },
+        rxjs: {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+          includeSecondaries: true,
         },
 
         ...sharedMappings.getDescriptors(),

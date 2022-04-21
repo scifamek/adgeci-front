@@ -21,19 +21,24 @@ module.exports = {
       ...sharedMappings.getAliases(),
     }
   },
+  experiments: {
+    outputModule: true
+  },
   plugins: [
     new ModuleFederationPlugin({
-      
-        // For remotes (please adjust)
+        library: { type: "module" },
+
         name: "entities",
         filename: "remoteEntry.js",
         exposes: {
-            './Module': './projects/entities/src/app/app.module.ts',
+            './EntitiesModule': './projects/entities/src/app/entities/entities.module.ts',
         },        
         
         // For hosts (please adjust)
         // remotes: {
-        //     "container": "container@http://localhost:4200/remoteEntry.js",
+        //     "container": "http://localhost:4200/remoteEntry.js",
+        //     "entities": "http://localhost:4501/remoteEntry.js",
+        //     "payments": "http://localhost:4502/remoteEntry.js",
 
         // },
 
