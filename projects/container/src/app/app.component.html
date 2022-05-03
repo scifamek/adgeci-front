@@ -1,11 +1,6 @@
 <aside>
-
-    <ul>
-      <li routerLink="./entities">Entities</li>
-      <li routerLink="./payments">Payments</li>
-    </ul>
-  </aside>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
-  
+  <app-menu *ngIf="items" [items]="items" [header-icon]="headerIcon"> </app-menu>
+</aside>
+<main class="px-2">
+  <router-outlet></router-outlet>
+</main>

@@ -1,7 +1,9 @@
 :host {
     display: flex;
+    height: 100vh;
     aside {
       width: 20vw;
+      border-right: 1px solid gray;
       section {
         width: 100%;
         padding-top: 20px;
@@ -11,27 +13,7 @@
           width: 80%;
         }
       }
-      ul {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        margin-top: 20px;
-        padding: 0;
-        width: 100%;
-        li {
-          height: 30px;
-          align-items: center;
-          display: flex;
-          border-radius: 5px;
-          padding-left: 10px;
-          width: 100%;
-          cursor: pointer;
-          font-size: 1.2rem;
-          &:hover {
-            background-color: rgb(233, 223, 223);
-          }
-        }
-      }
+
     }
     main {
       width: 80vw;

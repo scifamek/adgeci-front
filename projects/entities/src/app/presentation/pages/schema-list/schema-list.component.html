@@ -1,9 +1,10 @@
 <div class="container">
   <header class="mt-3">
     <section>
-      <h1>Módulo de entidades</h1>
+      <h1>Esquemas de entidades</h1>
       <p class="my-3">
-        Estas son las entidades configuradas para el modulo "Entidades"
+        Estas son los esquemas definidos. Puede crear diferentes entidades por
+        cada uno de acuerdo a la configuración que realizó.
       </p>
     </section>
     <section>
@@ -13,24 +14,26 @@
     </section>
   </header>
 
-  <div class="row d-flex">
+  <div class="row d-flex flex-wrap">
     <acl-card
-      class="col-lg-3 col-md-3 col-xl-3 col-sm-6 align-items-center flex-column"
-      *ngFor="let schema of ($schemas | async)?.data"
+      class="col-lg-4 col-md-4 col-xl-3 col-sm-6 mt-2 align-items-center flex-column"
+      *ngFor="let schema of schemas"
       title=" {{ schema.display }}"
       subtitle="  {{ schema.collection }}"
     >
-      <span class="material-icons">
-        {{ schema.presentation.icon }}
-      </span>
-
-      <div class="d-flex w-100 justify-content-around mt-3">
+      <div class="d-flex w-100 justify-content-around flex-wrap mt-3">
         <acl-button size="small" (click)="goToListItems(schema)">
-          Listado
+          <span class="material-icons">
+            {{ schema.presentation.icon }}
+          </span>
         </acl-button>
 
-        <acl-button size="small"  kind="outline" (click)="goToDetail(schema)">
-          Esquema
+        <acl-button size="small" kind="outline" (click)="goToDetail(schema)">
+          <span class="material-icons"> schema </span>
+        </acl-button>
+
+        <acl-button color="danger" size="small" kind="outline" (click)="goToDetail(schema)">
+          <span class="material-icons"> delete_forever </span>
         </acl-button>
       </div>
     </acl-card>

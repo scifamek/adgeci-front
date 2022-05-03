@@ -1,0 +1,8 @@
+<section *ngIf="headerIcon">
+    <img [src]="headerIcon" alt="">
+</section>
+<ul>
+  <li [routerLink]="[item.route]" *ngFor="let item of items">
+    {{ item.display }}
+  </li>
+</ul>

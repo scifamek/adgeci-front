@@ -15,6 +15,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EntityListComponent } from './entity-list/entity-list.component';
 import { SchemaDetailComponent } from './schema-detail/schema-detail.component';
 import { SchemaListComponent } from './schema-list/schema-list.component';
+import { MODULES_CONFIG_DATA, MODULES_CONFIG_DATA_IT } from '../../app.constants';
+import { UsecasesModule } from '../../usecases/usecases.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,12 @@ import { SchemaListComponent } from './schema-list/schema-list.component';
     SchemaDetailComponent,
     DashboardComponent,
     CreateSchemaComponent,
+  ],
+  providers: [
+    {
+      provide: MODULES_CONFIG_DATA_IT,
+      useValue: MODULES_CONFIG_DATA,
+    },
   ],
   imports: [
     AclCardModule,
@@ -38,6 +46,7 @@ import { SchemaListComponent } from './schema-list/schema-list.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    UsecasesModule
   ],
 })
 export class PagesModule {}

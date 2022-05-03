@@ -3,8 +3,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { IActionModel, IDefinitionModel } from 'crud-builder';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { EntityService } from '../../../services/entity/entity.service';
-import { SchemaService } from '../../../services/schema/schema.service';
+import { EntityService } from '../../../infrastructure/entity/entity.service';
+import { SchemaService } from '../../../infrastructure/schema/schema.service';
 
 
 @Component({

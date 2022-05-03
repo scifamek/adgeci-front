@@ -292,7 +292,12 @@
 						"inlineStyleLanguage": "scss",
 						"assets": [
 							"projects/entities/src/favicon.ico",
-							"projects/entities/src/assets"
+							"projects/entities/src/assets",
+							{
+								"glob": "**/*",
+								"input": "projects/entities/src/assets/",
+								"output": "./assets/"
+							}
 						],
 						"styles": [
 							"projects/entities/src/styles.scss"

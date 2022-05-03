@@ -3,20 +3,15 @@ import { CommonModule } from '@angular/common';
 import { AuthenticationService } from './authentication/authentication.service';
 import { EntityService } from './entity/entity.service';
 import { SchemaService } from './schema/schema.service';
-import { HttpClientModule } from '@angular/common/http';
-
-
+import { SchemaAdapter } from '../adapters/schema.adapter';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    HttpClientModule
-  ],
+  imports: [CommonModule],
   providers: [
     AuthenticationService,
     EntityService,
-    SchemaService
-  ]
+    { provide: SchemaAdapter, useClass: SchemaService },
+  ],
 })
-export class ServicesModule { }
+export class InfrastructureModule {}

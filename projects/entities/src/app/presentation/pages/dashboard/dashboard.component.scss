@@ -1,0 +1,18 @@
+:host {
+  header {
+    height: 50px;
+  }
+  .container-main {
+    height: calc(100vh - 50px);
+  }
+  h1 {
+    padding: 0;
+  }
+  height: 100%;
+
+  acl-card {
+    img {
+      width: 100%;
+    }
+  }
+}

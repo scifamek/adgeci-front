@@ -1,19 +1,30 @@
-<header class="row">
-  <h1 class="col">
-    Recuerde que aquí puede guardar, administrar y organizar toda su
-    información.
-  </h1>
-</header>
-<section class="row d-flex">
-  <section>
-    <acl-button  (click)="navigateTo('schemas')"> Ver los Esquemas </acl-button>
-  </section>
-
-  <section>
-    <acl-button  (click)="navigateTo('createSchema')"  > Crear un nuevo esquema </acl-button>
-  </section>
-
-  <section>
-    <acl-button> Eliminar un esquema </acl-button>
+<section class="container">
+  <header class="row d-flex flex-column">
+    <h1 class="col">Módulo de Entidades</h1>
+    <span>
+      Recuerde que aquí puede guardar, administrar y organizar toda su
+      información.
+    </span>
+  </header>
+</section>
+<section class="container container-main">
+  <section class="row h-100 align-items-center d-flex justify-content-center">
+    <acl-card
+      *ngFor="let option of options"
+      class="col-lg-2 col-xl-2 col-md-6 col-sm-3 col-xs-6"
+    >
+      <div class="d-flex flex-column align-content-center">
+        <figure>
+          <img [src]="option.imgUrl" alt="Imagen de esquema" srcset="" />
+        </figure>
+        <acl-button
+        kind="outline"
+          class="d-flex justify-content-center"
+          [routerLink]="[option.navigateTo]"
+        >
+          {{ option.display }}</acl-button
+        >
+      </div>
+    </acl-card>
   </section>
 </section>
